@@ -111,7 +111,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           TextButton(
                               onPressed: () {
                                 NotificationService()
-                                    .showNotification(0, "Alert", "Notification works", 2);
+                                    .showNotification(0, "Alert", "Notification alert after 5 seconds", 5);
                               },
                               child: Text(
                                 "Scheduled Notification",
@@ -121,7 +121,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                     fontWeight: FontWeight.w900),
                               )),
                           TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                NotificationService()
+                                    .showNotificationNow(0, "Alert", "Notification works instantly");},
                               child: Text(
                                 "Notification",
                                 style: TextStyle(

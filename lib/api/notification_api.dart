@@ -65,6 +65,35 @@ class NotificationService {
     );
   }
 
+  Future<void> showNotificationNow(int id, String title, String body) async {
+    tz.initializeTimeZones();
+
+    await flutterLocalNotificationsPlugin.show(
+      id,
+      title,
+      body,
+
+      const NotificationDetails(
+        android: AndroidNotificationDetails(
+            'main_channel',
+            'Main Channel',
+            channelDescription: 'your channel description',
+            importance: Importance.max,
+            priority: Priority.max,
+            icon: '@mipmap/ic_launcher'
+        ),
+        iOS: IOSNotificationDetails(
+          sound: 'default.wav',
+          presentAlert: true,
+          presentBadge: true,
+          presentSound: true,
+        ),
+      ),
+
+
+    );
+  }
+
   Future<void> cancelAllNotifications() async {
     await flutterLocalNotificationsPlugin.cancelAll();
   }
