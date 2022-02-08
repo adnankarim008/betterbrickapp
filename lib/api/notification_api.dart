@@ -18,7 +18,7 @@ class NotificationService {
 
   Future<void> initNotification() async {
     final AndroidInitializationSettings initializationSettingsAndroid =
-    AndroidInitializationSettings('@drawable/ic_notification');
+    AndroidInitializationSettings('@mipmap/ic_launcher');
 
     final IOSInitializationSettings initializationSettingsIOS =
     IOSInitializationSettings(
@@ -51,7 +51,7 @@ class NotificationService {
          channelDescription: 'your channel description',
             importance: Importance.max,
             priority: Priority.max,
-            icon: '@drawable/ic_notification'
+            icon: '@mipmap/ic_launcher'
         ),
         iOS: IOSNotificationDetails(
           sound: 'default.wav',

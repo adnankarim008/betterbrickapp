@@ -1,8 +1,3 @@
-
-
-
-
-
 import 'package:betterbrick/screens/login_screen.dart';
 import 'package:betterbrick/screens/registration_screen.dart';
 import 'package:betterbrick/screens/rounded_button.dart';
@@ -18,8 +13,6 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-
-
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -27,69 +20,122 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       child: Stack(
         children: <Widget>[
           // The containers in the background
-           Column(
+          Column(
             children: <Widget>[
-               Container(
+              Container(
                 height: MediaQuery.of(context).size.height * .5,
                 width: MediaQuery.of(context).size.width,
                 color: Color(0xFF4BDC31),
-                 child: Column(
-
-                   crossAxisAlignment: CrossAxisAlignment.center,
-                   mainAxisAlignment: MainAxisAlignment.center,
-                   children: [
-                     Text("BETTER",style: TextStyle(color: Color(0xff2E4550),fontSize: 40,fontWeight:FontWeight.w900 ),),
-                     Text("BRICK",style: TextStyle(color: Colors.white,fontSize: 50,fontWeight:FontWeight.bold),)
-                   ],
-
-                 ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "BETTER",
+                      style: TextStyle(
+                          color: Color(0xff2E4550),
+                          fontSize: 40,
+                          fontWeight: FontWeight.w900),
+                    ),
+                    Text(
+                      "BRICK",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 50,
+                          fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
               ),
-               Container(
+              Container(
                 height: MediaQuery.of(context).size.height * .5,
                 color: Colors.grey[50],
               )
             ],
           ),
 
-           Container(
+          Container(
             alignment: Alignment.topCenter,
-
-            padding:  EdgeInsets.only(
+            padding: EdgeInsets.only(
                 top: MediaQuery.of(context).size.height * .35,
                 right: 20.0,
                 left: 20.0),
-            child:  Container(
-
+            child: Container(
               height: 400.0,
-              width: MediaQuery.of(context).size.width*.85,
-
-              child:  Container(
+              width: MediaQuery.of(context).size.width * .85,
+              child: Container(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 15,right: 15,top: 30),
+                  padding: const EdgeInsets.only(left: 15, right: 15, top: 30),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text("Welcome to the Better Brick App",style: TextStyle(color:Color(0xFF4BDC31),fontSize: 20,fontWeight: FontWeight.w500 ),),
-                      SizedBox(height: 10,),
-                      Text("Discover how managing masonry is made easy",style: TextStyle(color:Color(0xff445574),fontSize: 13,fontWeight: FontWeight.w500 )),
-                      SizedBox(height: 20,),
-                      RoundedButton(title: "Sign Up",colour: Color(0xff445574),textColor: Colors.white,onPressed: (){Navigator.pushNamed(context, RegistrationScreen.id);}),
-                      RoundedButton(title: "I have an account",colour: Colors.white,textColor: Color(0xff445574),onPressed: (){Navigator.pushNamed(context, LoginScreen.id);},),
-                      SizedBox(height: 20,),
+                      Text(
+                        "Welcome to the Better Brick App",
+                        style: TextStyle(
+                            color: Color(0xFF4BDC31),
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text("Discover how managing masonry is made easy",
+                          style: TextStyle(
+                              color: Color(0xff445574),
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500)),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      RoundedButton(
+                          title: "Sign Up",
+                          colour: Color(0xff445574),
+                          textColor: Colors.white,
+                          onPressed: () {
+                            Navigator.pushNamed(context, RegistrationScreen.id);
+                          }),
+                      RoundedButton(
+                        title: "I have an account",
+                        colour: Colors.white,
+                        textColor: Color(0xff445574),
+                        onPressed: () {
+                          Navigator.pushNamed(context, LoginScreen.id);
+                        },
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          TextButton(onPressed: (){
-                NotificationService().showNotification(0, "title", "body", 5);
-                }, child: Text("Notification",style:TextStyle(color:Color(0xff445574),fontSize: 13,fontWeight: FontWeight.w900 ) ,)),
-                          TextButton(onPressed: (){}, child: Text("Scheduled Notification",style: TextStyle(color:Color(0xff445574),fontSize: 13,fontWeight: FontWeight.w900 ),))
+                          TextButton(
+                              onPressed: () {
+                                NotificationService()
+                                    .showNotification(0, "Alert", "Notification works", 2);
+                              },
+                              child: Text(
+                                "Scheduled Notification",
+                                style: TextStyle(
+                                    color: Color(0xff445574),
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w900),
+                              )),
+                          TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "Notification",
+                                style: TextStyle(
+                                    color: Color(0xff445574),
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w900),
+                              ))
                         ],
                       )
-
                     ],
                   ),
                 ),
-                decoration: BoxDecoration(color: Colors.white,
+                decoration: BoxDecoration(
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
@@ -102,8 +148,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         ),
                       )
                     ]),
-
-
               ),
             ),
           )
