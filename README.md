@@ -1,6 +1,7 @@
 # betterbrick
 
-A new Flutter project.
+A flutter project for BetterBrick which includes a simple register and login screen for users.
+The users are stored in FireBase.
 
 ## Getting Started
 
